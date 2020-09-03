@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Erijl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="js" href="js/main.js">
+  </head>
+
+
+  <!--
+<body class="no-scroll-y">
+
+
+  <section PRELOADER>
+
+
+    <div id="preloader">
+      <div class="scene">
+        <div class="rocket">
+          <img src="imgs/rockat.png" , width="128px" , height="128px">
+        </div>
+      </div>
+    </div>
+
+
+      PRELOADER IF SITE IS FINISHED 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+
+        setTimeout(function () {
+          $('.scene').addClass('loaded');
+          if ($('.scene').hasClass('loaded')) {
+            $('#preloader').delay(800).queue(function () {
+              $(this).remove();
+              $('body').removeClass('no-scroll-y');
+            });
+          }
+        }, 1000);
+      });
+    </script>
+
+
+    <script>
+      function stars() {
+        let count = 70;
+        let scene = document.querySelector('.scene');
+        let i = 0;
+        while (i < count) {
+          let star = document.createElement('i');
+          let x = Math.floor(Math.random() * window.innerWidth);
+
+          let duration = Math.random() * 1;
+          let h = Math.random() * 100;
+
+          star.style.left = x + 'px';
+          star.style.width = 1 + 'px';
+          star.style.height = 50 + h + 'px';
+          star.style.animationDuration = duration + 's';
+
+          scene.appendChild(star);
+          i++
+        }
+      }
+      stars();
+    </script>
+
+  </section>
+-->
+
+
+
+  <div class="startContainer">
+    <header>
+      <a href="#" class="logo">Erijl</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Works</a></li>
+        <li><a href="#">Contact</a></li>
+
+      </ul>
+    </header>
+
+    <section class="banner"></section>
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      })
+    </script>
+
+    <div class="typewriteContainer">
+      <a class="typewrite" data-period="2000"
+        data-type='[ "Hello, I am Erijl!", " I develop Websites.", " I develop Games." ]'>
+      </a>
+    </div>
+    <div class="containerBottomLeft">
+      <div class="iconContainer">
+        <a href="https://github.com/erijl">
+          <img src="imgs/GitHub-Mark-Light-32px.png">
+        </a>
+      </div>
+      <div class="iconContainer">
+        <a href="https://stackoverflow.com/erijl">
+          <img src="imgs/stackOverflow.png" style="height: 64px; width: 64px;">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    var TxtType = function (el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function () {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function () {
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // INJECT CSS
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+      document.body.appendChild(css);
+    }
+  </script>
+
+  <div class="aboutMeContainer">  
+    <div class="aboutMeMainContainer">
+      <div class="aboutMeMainContainerRight">
+        <div class="aboutMeMainContainerRightHeader"></div>
+        <div class="aboutMeMainContainerRightText">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skillsContainer">
+    <div class="skillsCircle">
+      <div class="c100 p25">
+        <span>25%</span>
+        <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+        </div>
+      </div>
+    </div>
+    <div class="skillsCircle">
+      <div class="c100 p40 green">
+        <span>40%</span>
+        <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+        </div>
+    </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
