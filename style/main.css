@@ -289,11 +289,18 @@ header.sticky ul li a{
 }
 
 .skillsCircle{
-    position: absolute;
-    margin-right: 20vw;
-    margin-left: 10vw;
+    margin-right: 1.5vw;
+    margin-left: 1.5vw;
     height: 10vh;
-    width: 10vh;
+    width: 7.8vw;
+    font-size:10vh;
+}
+
+.skillsCircleText{
+  font-size: 3vh;
+  color: #fff;
+  font-family: "Poppins-ExtraLight";
+  text-align: center;
 }
 /** SKILLS END**/
 
@@ -389,7 +396,7 @@ header.sticky ul li a{
     top: 0;
     width: 5em;
     line-height: 5em;
-    font-size: 0.2em;
+    font-size: 3vh;
     color: #cccccc;
     display: block;
     text-align: center;
