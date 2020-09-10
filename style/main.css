@@ -49,7 +49,7 @@ header .logo{
 }
 
 header ul{
-    font-size: 3vh;
+    font-size: 2vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -229,10 +229,11 @@ header.sticky ul li a{
 /** ABOUT ME START**/
 
 .aboutMeContainer{
-    
+    border-top: 3px solid rgb(26, 26, 26);
+
     height: 60vh;
     width: 100%;
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(31, 31, 31);
 
     display: flex;
     justify-content: center;
@@ -244,16 +245,15 @@ header.sticky ul li a{
     position: absolute;
     height: 40vh;
     width: 80vh;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(26, 26, 26);
     font-family: 'Courier New', Courier, monospace;
     outline: #fff;
     outline-width: 2vh;
     
-
 }
 
 .aboutMeMainContainerRight{
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(26, 26, 26);
     height: 100%;
     width: 100%;
 }
@@ -263,15 +263,15 @@ header.sticky ul li a{
     font-weight: bold;
     height: 10%;
     color: white;
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 
 .aboutMeMainContainerRightText{
     padding: 1vh;
     height: 90%;
     color: white;
-    background-color: rgb(31, 31, 31);
-    font-size: 2vh;
+    background-color: rgb(26, 26, 26);
+    font-size: 1.9vh;
 }
 
 /** ABOUT ME END**/
@@ -289,10 +289,10 @@ header.sticky ul li a{
 }
 
 .skillsCircle{
-    margin-right: 1.5vw;
-    margin-left: 1.5vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
     height: 10vh;
-    width: 7.8vw;
+    width: 5vw;
     font-size:10vh;
 }
 
@@ -306,10 +306,30 @@ header.sticky ul li a{
 
 /** RESPONSIV **/
 
+@media screen and (min-width: 1900px) {
+
+  .startContainer{
+      font-size: 80px;
+  }
+
+  .skillsCircle{
+    margin-right: 0.3vw;
+    margin-left: 0.3vw;
+    width: 5vw;
+  }
+
+}
+
 @media screen and (max-width: 1900px) {
 
     .startContainer{
         font-size: 80px;
+    }
+
+    .skillsCircle{
+      margin-right: 1vw;
+      margin-left: 1vw;
+      width: 7.8vw;
     }
 
 }
@@ -318,6 +338,12 @@ header.sticky ul li a{
 
     .startContainer{
         font-size: 40px;
+    }
+
+    .skillsCircle{
+      margin-right: 1vw;
+      margin-left: 1vw;
+      width: 18vw;
     }
 
 }
@@ -362,8 +388,8 @@ header.sticky ul li a{
   .c100 {
     position: relative;
     font-size: 120px;
-    width: 1em;
-    height: 1em;
+    width: 0.99em;
+    height: 0.99em;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -396,7 +422,7 @@ header.sticky ul li a{
     top: 0;
     width: 5em;
     line-height: 5em;
-    font-size: 3vh;
+    font-size: 0.2em;
     color: #cccccc;
     display: block;
     text-align: center;
