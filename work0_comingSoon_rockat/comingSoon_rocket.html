@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Erijl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/comingSoon_rockat.css">
+</head>
+<body>
+
+  
+<section PRELOADER>
+
+
+  <div id="preloader">
+    <div class="scene">
+      <div class="rocket">
+       <img src="imgs/rockat.png", width="128px", height="128px">
+     </div>
+  </div>
+</div>
+
+<div class="topleft">LOGO</div>
+
+<script>
+  function stars(){
+    let count = 70;
+    let scene = document.querySelector('.scene');
+    let i = 0;
+    while(i < count){
+      let star = document.createElement('i');
+      let x = Math.floor(Math.random() * window.innerWidth);
+
+      let duration = Math.random()* 1;
+      let h = Math.random() * 100;
+
+      star.style.left = x + 'px';
+      star.style.width = 1 + 'px';
+      star.style.height = 50 + h + 'px';
+      star.style.animationDuration = duration + 's';
+
+      scene.appendChild(star);
+      i++
+    }
+  }
+  stars();
+</script>
+
+
+ 
+
+<div class="middle">
+  <h1>COMING SOON</h1>
+  <hr>
+  <p id="demo">LOADING</p>
+</div>
+<div class=topright></div>
+
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date().getTime();
+  countDownDate = countDownDate + 300000000;
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+    // Get today's date and time
+    var now = new Date().getTime();
+  
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+  
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+    // Display the result in the element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+  
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "A FEW SECONDS";
+    }
+  }, 1000);
+  </script>
+
+</section>
+
+</body>
+</html>

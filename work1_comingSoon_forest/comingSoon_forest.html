@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Erijl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/comingSoon_forest.css">
+</head>
+<body>
+
+  
+<div class="main">
+
+  <div class="topleft">LOGO</div>
+
+  <div class="middle">
+    <h1>COMING SOON</h1>
+    <hr>
+    <p id="demo">LOADING</p>
+  </div>
+  <div class=topright></div>
+  
+  <script>
+    var countDownDate = new Date().getTime();
+    countDownDate = countDownDate + 300000000;
+    
+    var x = setInterval(function() {
+    
+      var now = new Date().getTime();
+    
+      var distance = countDownDate - now;
+    
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "A FEW SECONDS";
+      }
+    }, 1000);
+    </script>
+  
+
+</div>
+
+</body>
+</html>
