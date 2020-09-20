@@ -1,0 +1,12 @@
+Readme.md
+test.mjs
+.gitignore
+.git
+.idea/
+docs/
+.DS_Store
+.DS_store
+linkDocs.js
+.jsdoc.json
+.env
+test2.js
