@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Erijl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+<script>
+const WebUntis = require('webuntis');
+
+const untis = new WebUntis(
+	'school',
+	'username',
+	'password',
+	'xyz.webuntis.com'
+);
+
+untis
+	.login()
+	.then(() => {
+		return untis.getOwnTimetableForToday();
+	})
+	.then(timetable => {
+		// profit
+	});
+
+</script>
+
+  </body>
+  </html>
