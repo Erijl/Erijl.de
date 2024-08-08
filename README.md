@@ -1,4 +1,5 @@
 # Erijl.de
+![Frontend Deployment](https://img.shields.io/github/actions/workflow/status/erijl/erijl.de/deploy-frontend-to-ftp.yml?label=Frontend%20Deployment)
 
 This is my personal developer "portfolio" website built with Angular. It's just something to have there for people when visiting my domains.
 Feel free to use anything you like from this project, it's MIT licensed after all.
