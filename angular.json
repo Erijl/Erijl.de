@@ -27,9 +27,6 @@
             "styles": [
               "src/styles.css",
               "src/assets/fonts/fontstyle.css"
-            ],
-            "scripts": [
-              "src/assets/buttons.js"
             ]
           },
           "configurations": {
