@@ -11,66 +11,103 @@
   color: #f5f5f5;
 }
 
-.header {
-  font-size: 6rem;
-  font-weight: bold;
+.hero-title {
+  font-size: 7rem;
+  line-height: 1;
+  font-weight: 600;
   letter-spacing: -.06em;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+  margin: 0 0 40px;
+  font-family: Inter, arial, sans-serif;
 }
 
 .subheader, a {
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 1.4rem;
+  line-height: 1.6em;
+  font-weight: 400;
   color: #9ca3af;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: inherit;
+  text-wrap: normal;
+  letter-spacing: -.02em;
+  text-align: center;
+  max-width: 740px;
+  width: 100%;
+  margin: 0 auto 64px;
 }
 
 .footer {
   position: fixed;
+  left: 44.5vw;
   top: 97vh;
-  left: 46.5vw;
   flex-grow: 1;
   text-align: center;
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
-  color: #f5f5f5;
+  color: #888;
 }
 
 .footer a {
   color: inherit;
 }
 
-.gradient-text-blue,
-.gradient-text-purple,
-.gradient-text-orange {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding: 0.05em;
+/* Hero animation - heavily inspired by the 2023 version of vercel.com */
+
+.animated-gradient-text-background {
   position: relative;
-  display: inline-block;
+  display: block;
   user-select: none;
-  z-index: 1;
 }
 
-.gradient-text-blue {
-  background-image: linear-gradient(90deg, rgb(0, 124, 240), rgb(0, 223, 216));
-  animation: fadeBlue 8s infinite;
+.animated-gradient-text-background:before {
+  content: var(--content);
+  position: absolute;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: -10px;
+  background: var(--inverse-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  top: 0;
+  bottom: 0;
+  left: 0;
   z-index: 0;
 }
 
-.gradient-text-purple {
-  background-image: linear-gradient(90deg, rgb(121, 40, 202), rgb(255, 0, 128));
-  animation: fadePurple 8s infinite;
+.animated-gradient-text-foreground {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, var(--start-color), var(--end-color));
+  position: relative;
+  z-index: 1;
 }
 
-.gradient-text-orange {
-  background-image: linear-gradient(90deg, rgb(255, 77, 77), rgb(249, 203, 40));
-  animation: fadeOrange 8s infinite;
+.animated-gradient-text_background-1:before {
+  animation: fade-background-1 8s infinite
+}
+.animated-gradient-text_foreground-1 {
+  animation: fade-foreground-1 8s infinite
 }
 
+.animated-gradient-text_background-2:before {
+  animation: fade-background-2 8s infinite
+}
+.animated-gradient-text_foreground-2 {
+  animation: fade-foreground-2 8s infinite
+}
 
-@keyframes fadeBlue {
+.animated-gradient-text_background-3:before {
+  animation: fade-background-3 8s infinite
+}
+.animated-gradient-text_foreground-3 {
+  animation: fade-foreground-3 8s infinite
+}
+
+/* Animation keyframes */
+
+@keyframes fade-foreground-1 {
   0%, 16.667%, to {
     opacity: 1;
   }
@@ -79,7 +116,16 @@
   }
 }
 
-@keyframes fadePurple {
+@keyframes fade-background-1 {
+  0%, 16.667%, to {
+    opacity: 0;
+  }
+  25%, 91.667% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-foreground-2 {
   0%, to {
     opacity: 0;
   }
@@ -91,11 +137,69 @@
   }
 }
 
-@keyframes fadeOrange {
+@keyframes fade-background-2 {
+  0%, to {
+    opacity: 1;
+  }
+  33.333%, 50% {
+    opacity: 0;
+  }
+  25%, 58.333% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-foreground-3 {
   0%, 50%, to {
     opacity: 0;
   }
   66.667%, 83.333% {
     opacity: 1;
+  }
+}
+
+@keyframes fade-background-3 {
+  0%, 58.333%, 91.667%, to {
+    opacity: 1;
+  }
+  66.667%, 83.333% {
+    opacity: 0;
+  }
+}
+
+
+/* Media queries */
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 7rem
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 6rem
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-title {
+    font-size: 4.5rem
+  }
+
+  .subheader, a {
+    font-size: 1.2rem;
+    padding: 1vw;
+  }
+}
+
+@media (min-height: 1120px) {
+  .hero-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 8rem;
+    margin-bottom: 64px;
   }
 }

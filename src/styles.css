@@ -3,5 +3,24 @@
   padding: 0;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%; overflow: hidden; }
 body { margin: 0; font-family: Inter, Arial, sans-serif; }
+
+:root {
+  --item-one-start-gradient: #007cf0;
+  --item-one-end-gradient: #00dfd8;
+  --item-one-line-end: #019ae9;
+  --item-one-text: #0a72ef;
+
+  --item-two-start-gradient: #7928ca;
+  --item-two-end-gradient: #ff0080;
+  --item-two-line-end: #9a1fb8;
+  --item-two-text: #de1d8d;
+
+  --item-three-start-gradient: #ff4d4d;
+  --item-three-end-gradient: #f9cb28;
+  --item-three-line-end: #f9cb28;
+  --item-three-text: #ff5b4f;
+
+  --inverse-text-gradient: linear-gradient(180deg,#fff,hsla(0,0%,100%,.75));
+}
